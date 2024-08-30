@@ -126,3 +126,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+#git init
+#     add .
+#    commit -m "primeiro commit"
+#git remote add origin link
+#git push -u origin master
+#git branch
+#git push u- origin main
