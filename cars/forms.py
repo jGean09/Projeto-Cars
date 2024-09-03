@@ -1,7 +1,7 @@
 from django import forms
-from cars.models import Brand
+from cars.models import Brand, car
 
-
+"""
 class CarForm(forms.Form):
     model = forms.CharField(max_length=200)
     brand = forms.ModelChoiceField(Brand.objects.all())
@@ -10,3 +10,26 @@ class CarForm(forms.Form):
     plate = forms.CharField(max_length=10)
     value = forms.FloatField()
     photo = forms.ImageField()
+
+    def save(self):
+        new_car = car(
+            model=self.cleaned_data['model'],
+            brand=self.cleaned_data['brand'],
+            factory_year=self.cleaned_data['factory_year'],
+            model_year=self.cleaned_data['model_year'],
+            plate=self.cleaned_data['plate'],
+            value=self.cleaned_data['value'],
+            photo=self.cleaned_data['photo'],
+        )
+        new_car.save()
+        return new_car
+
+"""
+
+class CarModelForm(forms.ModelForm):
+    class Meta:
+        model = car
+        fields = '__all__'
+
+
+
